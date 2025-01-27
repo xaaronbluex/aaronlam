@@ -213,7 +213,12 @@ body.is-preload *:after {
 
 /* Type */
 
-body,
+body {
+  transform: scale(0.9); /* Zoom out by 10% */
+  transform-origin: top left; /* Set the origin for scaling */
+  overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
 input,
 select,
 textarea {
