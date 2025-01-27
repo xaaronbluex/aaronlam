@@ -2465,12 +2465,6 @@ input[type="radio"] + label:before {
   width: 100%;
 }
 
-.image img {
-  width: 100%; /* Adjust the width as needed */
-  max-width: 600px; /* Set a maximum width */
-  height: auto; /* Maintain aspect ratio */
-}
-
 /* List */
 
 ol {
