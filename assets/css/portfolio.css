@@ -209,11 +209,14 @@ body {
 #intro .intro-sky {
 	position: relative;
 	isolation: isolate;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	width: 100%;
 	max-width: 100%;
 	box-sizing: border-box;
 	margin: 0;
-	padding: 1.15rem 0.9rem 1.05rem;
+	padding: 1.15rem 0.9rem;
 	overflow: hidden;
 	background-color: #05060c;
 	color: #f4f6f8;
@@ -226,7 +229,7 @@ body {
 	justify-content: start;
 	column-gap: 0.5rem;
 	row-gap: 0.35rem;
-	width: 100%;
+	width: max-content;
 	max-width: 100%;
 	margin: 0;
 	padding: 0;
@@ -314,14 +317,9 @@ body {
 }
 
 @media screen and (max-width: 1280px) {
-	#intro header h2.portfolio-title {
-		justify-content: center;
-	}
-
-	/* Cover the sidebar's top padding so the sky meets the intro edges. */
+	/* Pull the sky over the sidebar's top padding without shifting the title off center. */
 	#intro .intro-sky {
 		margin-top: -3em;
-		padding-top: calc(3em + 1.15rem);
 	}
 }
 
