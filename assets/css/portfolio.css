@@ -68,30 +68,41 @@ body {
 	min-width: 0;
 }
 
-#experience ul.posts article .image {
-	-moz-flex: 0 0 auto;
-	-webkit-flex: 0 0 auto;
-	-ms-flex: 0 0 auto;
-	flex: 0 0 auto;
-	width: auto;
-	min-width: 0;
-	max-width: 22em;
+#experience ul.posts article .image,
+#voluntary ul.posts article .image {
+	-moz-flex: 0 0 4.25em;
+	-webkit-flex: 0 0 4.25em;
+	-ms-flex: 0 0 4.25em;
+	flex: 0 0 4.25em;
+	width: 4.25em;
+	min-width: 4.25em;
+	max-width: 4.25em;
+	height: 4.25em;
 	margin-right: 1.15em;
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	-moz-align-items: center;
+	-webkit-align-items: center;
+	-ms-align-items: center;
+	align-items: center;
+	-moz-justify-content: center;
+	-webkit-justify-content: center;
+	-ms-justify-content: center;
+	justify-content: center;
 	background: transparent;
 }
 
-#experience ul.posts article .image img {
+#experience ul.posts article .image img,
+#voluntary ul.posts article .image img {
 	display: block;
-	width: auto;
-	height: auto;
-	max-width: 22em;
-	max-height: 4em;
+	width: 100%;
+	height: 100%;
+	max-width: 100%;
+	max-height: 100%;
 	object-fit: contain;
-	object-position: left center;
-}
-
-#experience ul.posts article .image img[src="images/canpak.png"] {
-	max-height: 2.15em;
+	object-position: center;
 }
 
 #intro .tagline {
@@ -185,12 +196,11 @@ body {
 		flex-direction: column;
 	}
 
-	#experience ul.posts article .image {
+	#experience ul.posts article .image,
+	#voluntary ul.posts article .image {
 		margin: 0 0 0.85em 0;
-		max-width: 100%;
-	}
-
-	#experience ul.posts article .image img {
-		max-width: 100%;
+		width: 4.25em;
+		height: 4.25em;
+		max-width: 4.25em;
 	}
 }
