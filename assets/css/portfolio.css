@@ -1,0 +1,148 @@
+/*
+	Portfolio layout refresh.
+	Keeps Future Imperfect (assets/css/main.css) and only adjusts
+	section order, readability, and the wider work / certificate column.
+*/
+
+body {
+	transform: none;
+	overflow-x: hidden;
+}
+
+#main > section {
+	margin: 0 0 2.75em 0;
+}
+
+#main > section > h2 {
+	font-family: "Raleway", Helvetica, sans-serif;
+	font-weight: 800;
+	font-size: 0.85em;
+	letter-spacing: 0.18em;
+	line-height: 1.4;
+	text-transform: uppercase;
+	color: #3c3b3b;
+	margin: 0 0 1.15em 0;
+}
+
+#experience,
+#certificates {
+	background: #ffffff;
+	border: solid 1px rgba(160, 160, 160, 0.3);
+	padding: 2.1em 2.4em 0.6em;
+}
+
+#experience ul.posts article header h2,
+#experience ul.posts article header h2 a {
+	font-size: 1.05em;
+	font-weight: 800;
+	letter-spacing: 0.01em;
+	line-height: 1.35;
+	text-transform: none;
+	margin: 0 0 0.3em 0;
+}
+
+#experience ul.posts article header h2.role {
+	font-size: 0.95em;
+	font-weight: 600;
+	letter-spacing: 0;
+	color: #555555;
+	margin: 0 0 0.85em 0;
+}
+
+#experience ul.posts article header p {
+	margin: 0 0 0.65em 0;
+	line-height: 1.65;
+}
+
+#experience ul.posts article header .published {
+	display: block;
+	margin: 0.35em 0 0 0;
+	font-size: 0.72em;
+	font-weight: 600;
+	letter-spacing: 0.06em;
+	text-transform: none;
+	color: #3c3b3b;
+}
+
+#experience ul.posts article .image {
+	width: 4.75em;
+	min-width: 4.75em;
+	margin-right: 1.35em;
+}
+
+#maps > .post:last-child {
+	margin-bottom: 0;
+}
+
+#certificates ul.posts li {
+	border-top: solid 1px rgba(160, 160, 160, 0.2);
+}
+
+#certificates ul.posts article,
+#certificates ul.posts li > header {
+	display: block;
+}
+
+#certificates h3 {
+	letter-spacing: 0.04em;
+	text-transform: none;
+	font-size: 1em;
+	line-height: 1.4;
+	margin: 0 0 0.85em 0;
+}
+
+#certificates .image {
+	display: block;
+	margin: 0 0 1em 0;
+	max-width: 720px;
+}
+
+#certificates .image img {
+	display: block;
+	width: 100%;
+	max-width: 720px;
+	height: auto;
+}
+
+#sidebar > section > h2 {
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	font-size: 0.78em;
+}
+
+#sidebar ul.posts article header h2,
+#sidebar ul.posts article header h3,
+#sidebar ul.posts article header h2 a,
+#sidebar ul.posts article header h3 a {
+	letter-spacing: 0.01em;
+	line-height: 1.35;
+	text-transform: none;
+}
+
+#sidebar ul.posts article header p {
+	line-height: 1.6;
+	margin: 0 0 0.55em 0;
+}
+
+#sidebar ul.posts article header .published {
+	margin: 0.45em 0 0 0;
+	letter-spacing: 0.04em;
+}
+
+@media screen and (max-width: 736px) {
+	#experience,
+	#certificates {
+		padding: 1.35em 1.15em 0.4em;
+	}
+
+	#experience ul.posts article {
+		-moz-flex-direction: column;
+		-webkit-flex-direction: column;
+		-ms-flex-direction: column;
+		flex-direction: column;
+	}
+
+	#experience ul.posts article .image {
+		margin: 0 0 0.85em 0;
+	}
+}
