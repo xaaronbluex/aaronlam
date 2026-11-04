@@ -204,3 +204,39 @@ body {
 		max-width: 4.25em;
 	}
 }
+
+/* Title row: heading text with a 56px spinning Earth beside it. */
+#intro header h2.portfolio-title {
+	display: grid;
+	grid-template-columns: minmax(0, max-content) 56px;
+	align-items: center;
+	justify-content: start;
+	column-gap: 0.5rem;
+	row-gap: 0.35rem;
+}
+
+#intro header h2.portfolio-title .portfolio-title-text {
+	min-width: 0;
+}
+
+#intro .earth-globe {
+	display: block;
+	width: 56px;
+	height: 56px;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	pointer-events: none;
+	visibility: hidden;
+}
+
+#intro .earth-globe.is-ready {
+	visibility: visible;
+}
+
+@media screen and (max-width: 1280px) {
+	#intro header h2.portfolio-title {
+		justify-content: center;
+	}
+}
