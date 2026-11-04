@@ -205,7 +205,8 @@ body {
 	}
 }
 
-/* Title row: heading text with a 56px spinning Earth beside it. */
+/* Title row: heading text with a 56px spinning Earth beside it.
+   The black starfield is only this strip, above the email. */
 #intro header h2.portfolio-title {
 	display: grid;
 	grid-template-columns: minmax(0, max-content) 56px;
@@ -213,10 +214,73 @@ body {
 	justify-content: start;
 	column-gap: 0.5rem;
 	row-gap: 0.35rem;
+	position: relative;
+	isolation: isolate;
+	width: fit-content;
+	max-width: 100%;
+	box-sizing: border-box;
+	padding: 0.75rem 0.8rem 0.65rem;
+	overflow: hidden;
+	background-color: #05060c;
+	color: #f4f6f8;
 }
 
 #intro header h2.portfolio-title .portfolio-title-text {
 	min-width: 0;
+	color: inherit;
+}
+
+#intro header h2.portfolio-title::before,
+#intro header h2.portfolio-title::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	z-index: -1;
+	pointer-events: none;
+	background-repeat: repeat;
+}
+
+#intro header h2.portfolio-title::before {
+	background-image:
+		radial-gradient(1.4px 1.4px at 18px 22px, rgba(255, 255, 255, 0.95), transparent 2px),
+		radial-gradient(1px 1px at 74px 12px, rgba(214, 228, 255, 0.85), transparent 1.6px),
+		radial-gradient(1px 1px at 128px 48px, rgba(255, 255, 255, 0.7), transparent 1.5px),
+		radial-gradient(1.8px 1.8px at 46px 68px, rgba(255, 255, 255, 0.55), transparent 2.6px),
+		radial-gradient(1px 1px at 154px 28px, rgba(255, 244, 220, 0.8), transparent 1.5px),
+		radial-gradient(1px 1px at 96px 86px, rgba(255, 255, 255, 0.45), transparent 1.4px);
+	background-size: 176px 108px;
+	animation: intro-star-twinkle 5.6s ease-in-out infinite;
+}
+
+#intro header h2.portfolio-title::after {
+	background-image:
+		radial-gradient(1px 1px at 30px 40px, rgba(255, 255, 255, 0.75), transparent 1.5px),
+		radial-gradient(1.3px 1.3px at 108px 18px, rgba(255, 255, 255, 0.9), transparent 2px),
+		radial-gradient(1px 1px at 62px 78px, rgba(206, 222, 255, 0.7), transparent 1.5px),
+		radial-gradient(1px 1px at 150px 72px, rgba(255, 255, 255, 0.5), transparent 1.4px),
+		radial-gradient(1.6px 1.6px at 12px 92px, rgba(255, 250, 236, 0.65), transparent 2.4px);
+	background-size: 168px 112px;
+	background-position: 36px 18px;
+	animation: intro-star-twinkle 7.4s ease-in-out infinite reverse;
+}
+
+@keyframes intro-star-twinkle {
+	0%,
+	100% {
+		opacity: 0.42;
+	}
+
+	50% {
+		opacity: 1;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	#intro header h2.portfolio-title::before,
+	#intro header h2.portfolio-title::after {
+		animation: none;
+		opacity: 0.82;
+	}
 }
 
 #intro .earth-globe {
@@ -238,5 +302,7 @@ body {
 @media screen and (max-width: 1280px) {
 	#intro header h2.portfolio-title {
 		justify-content: center;
+		margin-left: auto;
+		margin-right: auto;
 	}
 }
