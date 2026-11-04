@@ -205,8 +205,20 @@ body {
 	}
 }
 
-/* Title row: heading text with a 56px spinning Earth beside it.
-   The black starfield is only this strip, above the email. */
+/* Starfield fills the whole intro block above the email, edge to edge. */
+#intro .intro-sky {
+	position: relative;
+	isolation: isolate;
+	width: 100%;
+	max-width: 100%;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 1.15rem 0.9rem 1.05rem;
+	overflow: hidden;
+	background-color: #05060c;
+	color: #f4f6f8;
+}
+
 #intro header h2.portfolio-title {
 	display: grid;
 	grid-template-columns: minmax(0, max-content) 56px;
@@ -214,15 +226,12 @@ body {
 	justify-content: start;
 	column-gap: 0.5rem;
 	row-gap: 0.35rem;
-	position: relative;
-	isolation: isolate;
-	width: fit-content;
+	width: 100%;
 	max-width: 100%;
-	box-sizing: border-box;
-	padding: 0.75rem 0.8rem 0.65rem;
-	overflow: hidden;
-	background-color: #05060c;
-	color: #f4f6f8;
+	margin: 0;
+	padding: 0;
+	background: transparent;
+	color: inherit;
 }
 
 #intro header h2.portfolio-title .portfolio-title-text {
@@ -230,8 +239,13 @@ body {
 	color: inherit;
 }
 
-#intro header h2.portfolio-title::before,
-#intro header h2.portfolio-title::after {
+/* Theme pulls every header paragraph up by 1em. Keep the email on the light background. */
+#intro .intro-sky + p {
+	margin-top: 1rem;
+}
+
+#intro .intro-sky::before,
+#intro .intro-sky::after {
 	content: "";
 	position: absolute;
 	inset: 0;
@@ -240,7 +254,7 @@ body {
 	background-repeat: repeat;
 }
 
-#intro header h2.portfolio-title::before {
+#intro .intro-sky::before {
 	background-image:
 		radial-gradient(1.4px 1.4px at 18px 22px, rgba(255, 255, 255, 0.95), transparent 2px),
 		radial-gradient(1px 1px at 74px 12px, rgba(214, 228, 255, 0.85), transparent 1.6px),
@@ -252,7 +266,7 @@ body {
 	animation: intro-star-twinkle 5.6s ease-in-out infinite;
 }
 
-#intro header h2.portfolio-title::after {
+#intro .intro-sky::after {
 	background-image:
 		radial-gradient(1px 1px at 30px 40px, rgba(255, 255, 255, 0.75), transparent 1.5px),
 		radial-gradient(1.3px 1.3px at 108px 18px, rgba(255, 255, 255, 0.9), transparent 2px),
@@ -276,8 +290,8 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-	#intro header h2.portfolio-title::before,
-	#intro header h2.portfolio-title::after {
+	#intro .intro-sky::before,
+	#intro .intro-sky::after {
 		animation: none;
 		opacity: 0.82;
 	}
@@ -302,7 +316,17 @@ body {
 @media screen and (max-width: 1280px) {
 	#intro header h2.portfolio-title {
 		justify-content: center;
-		margin-left: auto;
-		margin-right: auto;
+	}
+
+	/* Cover the sidebar's top padding so the sky meets the intro edges. */
+	#intro .intro-sky {
+		margin-top: -3em;
+		padding-top: calc(3em + 1.15rem);
+	}
+}
+
+@media screen and (max-width: 736px) {
+	#intro {
+		padding-top: 0;
 	}
 }
